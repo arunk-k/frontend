@@ -1,22 +1,25 @@
 import { Route, Routes } from 'react-router-dom'
+import Books from './pages/Books/Books'
 import Register from './pages/auth/Register'
 import Login from './pages/auth/Login'
 import { Toaster } from 'react-hot-toast'
+import BookDetails from './pages/BookDetails/BookDetails'
 import AddBook from './pages/addBook/AddBook'
-import Books from './pages/books/Books'
-import BookDetails from './pages/bookDetails/BookDetails'
-
+import { ContextAuth } from './context/AuthContext'
+import { useContext } from 'react'
 
 function App() {
+
+  const { authStatus } = useContext(ContextAuth)
 
   return (
     <>
       <Routes>
         <Route path={'/'} element={<Books />} />
-        <Route path={'/add-book'} element={<AddBook /> } />
+        <Route path={'/add-book'} element={authStatus ? <AddBook /> : <Login />} />
         <Route path={'/register'} element={<Register />} />
         <Route path={'/login'} element={<Login />} />
-        <Route path={'/books/:id'} element={<BookDetails />} />
+        <Route path="/books/:id" element={<BookDetails />} />
       </Routes>
       <Toaster />
     </>
