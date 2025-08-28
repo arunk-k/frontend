@@ -1,15 +1,17 @@
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { ContextAuth } from "../../context/AuthContext"
 import "./Header.css"
 
 export default function Header() {
 
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
-
+  const { authStatus, setAuthStatus } = useContext(ContextAuth);
 
   const handleLogout = () => {
     localStorage.clear()
+    setAuthStatus(false)
     navigate("/login")
   }
 
@@ -27,15 +29,18 @@ export default function Header() {
           <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav">
             <ul className="navbar-nav ms-auto align-items-lg-center">
 
-              <Link to="/login" className="btn btn-outline-primary me-2 mb-2 mb-lg-0"> Login <i className="fa-solid fa-sign-in-alt fa-sm"></i></Link>
+              {!authStatus && (
+                <Link to="/login" className="btn btn-outline-primary me-2 mb-2 mb-lg-0"> Login <i className="fa-solid fa-sign-in-alt fa-sm"></i></Link>
+              )}
 
-              <button onClick={handleLogout} className="btn btn-danger">Logout</button>
-
+              {authStatus && (
+                <button onClick={handleLogout} className="btn btn-danger">Logout</button>
+              )}
             </ul>
           </div>
         </div>
       </nav>
     </>
-
+    
   )
 }
