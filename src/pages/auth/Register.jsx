@@ -19,12 +19,12 @@ function Register() {
     const { name, email, password, confirmPassword } = formData
 
     if (!name || !email || !password || !confirmPassword) {
-      return toast.error("⚠️ All fields are required")
+      return toast.error("All fields are required")
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
-      return toast.error("⚠️ Invalid email address")
+      return toast.error("Invalid email address")
     }
 
 
@@ -38,7 +38,7 @@ function Register() {
       navigate("/login")
     } catch (e) {
       if (e?.message === "User already exists") {
-        toast("⚠️ User already exists")
+        toast.error("User already exists")
       } else {
         toast.error(e?.message || "Registration failed")
       }
@@ -72,10 +72,9 @@ function Register() {
 
             <div className="mb-3">
               <label className="form-label">Confirm Password</label>
-              <input type="password" className="form-control" placeholder="Re-enter your password" value={formData.confirmPassword} onChange={(e) => setFormData({...formData,confirmPassword: e.target.value,})}/>
+              <input type="password" className="form-control" placeholder="Re-enter your password" value={formData.confirmPassword} onChange={(e) => setFormData({...formData,confirmPassword: e.target.value})}/>
             </div>
 
-            {/* Submit */}
             <button type="submit" className="btn auth-btn w-100" >
               Register
             </button>

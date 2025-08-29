@@ -1,0 +1,56 @@
+.bookdetails-section {
+  background: #e0ebfa;
+}
+
+.book-cover-detail {
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.review-card {
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-select,
+.form-control {
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-select:focus,
+.form-control:focus {
+  border-color: #1f4e88ff;
+  box-shadow: 0 0 0 0.2rem rgba(31, 78, 136, 0.25);
+}
+
+.btn-primary {
+  background-color: #1f4e88ff;
+  border: none;
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #163a65;
+  transform: scale(1.05);
+}
+
+.review-btn {
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .book-cover-detail {
+    max-height: 250px;
+  }
+  .review-btn {
+    width: 100%;
+  }
+}

@@ -18,9 +18,9 @@ export default function Books() {
     <>
       <Header />
       <section className="py-5 books-section">
-        <div className="container px-4 px-lg-5 mt-4">
+        <div style={{minHeight:'100vh'}} className="container px-4 px-lg-5 mt-4">
           <div className="d-flex justify-content-between align-items-center mb-4">
-            <h2 className="books-heading fw-bold text-primary">
+            <h2 style={{ color: "#1f4e88ff" }} className="books-heading fw-bold ">
               Explore Our Books
             </h2>
             {localStorage.getItem("token") && (

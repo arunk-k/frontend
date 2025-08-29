@@ -1,0 +1,61 @@
+.addbook-section {
+  background: #e0ebfa;
+}
+
+.addbook-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f4e88ff;
+}
+
+.form-card {
+  border-radius: 20px;
+  max-width: 650px; 
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #1f4e88ff;
+  box-shadow: 0 0 0 0.2rem rgba(31, 78, 136, 0.25);
+}
+
+.btn-primary {
+  background-color: #1f4e88ff;
+  border: none;
+  padding: 0.6rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #163a65;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.addbook-btn {
+  min-width: 200px; 
+}
+
+@media (max-width: 768px) {
+  .form-card {
+    padding: 1.5rem;
+  }
+  .addbook-heading {
+    font-size: 1.6rem;
+  }
+  .addbook-btn {
+    width: 100%;   
+  }
+}

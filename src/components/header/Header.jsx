@@ -18,10 +18,10 @@ export default function Header() {
   return (
 
     <>
-      <nav style={{ backgroundColor: "#e6edf6" }} className="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
+      <nav style={{ backgroundColor: "#d9e8f8ff" }} className="navbar navbar-expand-lg navbar-light shadow-sm sticky-top">
         <div className="container">
-          <Link className="navbar-brand fw-bold text-success" to="/">
-            <i className="fa-solid fa-book" style={{ color: "cyan" }}></i> {" "} Book Review Board
+          <Link style={{ color: "#1f4e88ff" }} className="navbar-brand fw-bold" to="/">
+            <i className="fa-solid fa-book" style={{ color: "#1f4e88ff" }}></i> {" "} Book Review Board
           </Link>
           <button className="navbar-toggler" type="button" onClick={() => setIsOpen(!isOpen)}>
             <span className="navbar-toggler-icon"></span>
@@ -31,6 +31,9 @@ export default function Header() {
 
               {!authStatus && (
                 <Link to="/login" className="btn btn-outline-primary me-2 mb-2 mb-lg-0"> Login <i className="fa-solid fa-sign-in-alt fa-sm"></i></Link>
+              )}
+              {!authStatus && (
+                <Link to="/register" className="btn btn-outline-primary me-2 mb-2 mb-lg-0"> Register</Link>
               )}
 
               {authStatus && (

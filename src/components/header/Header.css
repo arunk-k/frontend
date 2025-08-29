@@ -25,3 +25,11 @@
   border-radius: 20px;
   padding: 5px 15px;
 }
+
+@media (max-width: 768px) {
+  .navbar .btn {
+  width: 100px;
+  }
+}
+
+
