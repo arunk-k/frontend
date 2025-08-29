@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import Books from './pages/Books/Books'
+import Books from './pages/books/Books'
 import Register from './pages/auth/Register'
 import Login from './pages/auth/Login'
 import { Toaster } from 'react-hot-toast'
